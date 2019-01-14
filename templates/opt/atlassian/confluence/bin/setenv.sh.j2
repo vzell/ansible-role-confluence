@@ -69,6 +69,7 @@ echo "--------------------------------------------------------------------------
 CATALINA_OPTS="-XX:-PrintGCDetails -XX:+PrintGCDateStamps -XX:-PrintTenuringDistribution ${CATALINA_OPTS}"
 CATALINA_OPTS="-Xloggc:$LOGBASEABS/logs/gc-`date +%F_%H-%M-%S`.log -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=5 -XX:GCLogFileSize=2M ${CATALINA_OPTS}"
 CATALINA_OPTS="-XX:G1ReservePercent=20 ${CATALINA_OPTS}"
+# CATALINA_OPTS="-Djava.net.preferIPv4Stack=true ${CATALINA_OPTS}"
 CATALINA_OPTS="-Djava.awt.headless=true ${CATALINA_OPTS}"
 CATALINA_OPTS="-D${JVM_SUPPORT_RECOMMENDED_ARGS:-"{{ confluence_jvm_support_recommended_args }}"} ${CATALINA_OPTS}"
 CATALINA_OPTS="-Xms${JVM_MINIMUM_MEMORY:-"{{ confluence_jvm_minimum_memory }}"} -Xmx${JVM_MAXIMUM_MEMORY:-"{{ confluence_jvm_maximum_memory }}"} -XX:+UseG1GC ${CATALINA_OPTS}"
